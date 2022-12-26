@@ -9,11 +9,13 @@ public class AnimationCode : MonoBehaviour
     public GameObject[] Body;
     List<string> lines;
     int counter = 0;
+
+    public string JointPointFile;
     
     void Start()
     {
     	// 读取MotionFile_Pose.txt的动作数据文件
-        lines = System.IO.File.ReadLines("Assets/MotionFiles/MotionFile2.txt").ToList();
+        lines = System.IO.File.ReadLines("Assets/MotionFiles/bev/" + JointPointFile + ".txt").ToList();
         
     }
 
@@ -22,7 +24,7 @@ public class AnimationCode : MonoBehaviour
         string[] points = lines[counter].Split(',');
 	
 	// 循环遍历到每一个Sphere点
-        for (int i =0; i<24;i++)
+        for (int i =0; i<this.Body.Length;i++)
         {
             float x = float.Parse(points[0 + (i * 3)]) * 10;
             float y = -1 * float.Parse(points[1 + (i * 3)]) * 10; //乘-1
