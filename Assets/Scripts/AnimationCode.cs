@@ -15,7 +15,7 @@ public class AnimationCode : MonoBehaviour
     void Start()
     {
     	// 读取MotionFile_Pose.txt的动作数据文件
-        lines = System.IO.File.ReadLines("Assets/MotionFiles/bev/" + JointPointFile + ".txt").ToList();
+        lines = System.IO.File.ReadLines("Assets/MotionFiles/romp/" + JointPointFile + ".txt").ToList();
         
     }
 
